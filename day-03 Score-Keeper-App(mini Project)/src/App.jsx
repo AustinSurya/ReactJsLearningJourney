@@ -8,19 +8,47 @@ function App() {
     
   let score = 0;
   let wickets = 0;
+  let ballwiseresult =[];
+  let hit =0;
 
   function addscore(num) {
-   score += num;
+   hit =num;
+  
+   ballwiseresult.push(num);
   }
   
    function addwicket() {
 
+    hit = "W";
   if(wickets<10){
-    wickets +=1;
-  }
-  
+    
+    ballwiseresult.push("W");
   }
 
+  }
+
+  function handlesubmit(event){
+    event.preventDefault();
+
+  }
+
+  function addballwise(){
+
+          <div>{ballwiseresult.map((ball, index)=>(
+         <>
+         {index % 6 === 0?<br/>:null}
+        <span key ={index}>{ball === 0?<strong>.</strong>:ball}</span>&nbsp;&nbsp;&nbsp;
+        </>))}
+        </div>
+  }
+ 
+  function form(){
+    <form>
+      <input value={hit}/>
+      <input  />
+      <button onSubmit={handlesubmit}>SUBMIT</button>
+    </form>
+  }
   return (
     <>
       <h1>Score-Keeper-App</h1>
@@ -33,7 +61,7 @@ function App() {
         <button onClick={(num) => addscore(4)} >4</button>
         <button onClick={(num) => addscore(5)} >5</button>
         <button onClick={(num) => addscore(6)} >6</button>
-        <button onClick={(num) => addscore(wicket)} >wicket</button>
+        <button onClick={addwicket} >wicket</button>
       </div>
       
 
