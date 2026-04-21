@@ -63,7 +63,7 @@ function App() {
         <button onClick={(num) => addscore(6)} >6</button>
         <button onClick={addwicket} >wicket</button>
       </div>
-      
+      g
 
     </>
   )
