@@ -48,6 +48,9 @@ function App() {
       <input  />
       <button onSubmit={handlesubmit}>SUBMIT</button>
     </form>
+  } 
+  function table(){
+    <table></table>
   }
   return (
     <>
